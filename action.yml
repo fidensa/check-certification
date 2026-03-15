@@ -1,0 +1,51 @@
+name: 'Fidensa Certification Check'
+description: 'Check Fidensa certification status for AI capabilities in your CI/CD pipeline'
+author: 'Fidensa'
+
+branding:
+  icon: 'shield'
+  color: 'yellow'
+
+inputs:
+  capabilities:
+    description: >
+      Newline or comma-separated list of capability IDs to check.
+      Alternatively, create a .fidensa.yml config file in your repo root.
+    required: false
+  config:
+    description: 'Path to .fidensa.yml config file (default: .fidensa.yml)'
+    required: false
+    default: '.fidensa.yml'
+  fail-on:
+    description: >
+      Comma-separated list of statuses that cause failure.
+      Options: suspended, revoked, expired, missing (not certified).
+      Default: suspended,revoked
+    required: false
+    default: 'suspended,revoked'
+  min-score:
+    description: 'Minimum trust score required (0-100). Default: 0 (no minimum)'
+    required: false
+    default: '0'
+  min-tier:
+    description: 'Minimum certification tier required. Options: evaluated, verified, certified. Default: none'
+    required: false
+    default: ''
+  warn-only:
+    description: 'If true, log warnings but do not fail the build. Default: false'
+    required: false
+    default: 'false'
+  api-url:
+    description: 'Fidensa API base URL. Default: https://fidensa.com'
+    required: false
+    default: 'https://fidensa.com'
+
+outputs:
+  passed:
+    description: 'Whether all certification checks passed (true/false)'
+  results:
+    description: 'JSON array of per-capability check results'
+
+runs:
+  using: 'node20'
+  main: 'index.cjs'

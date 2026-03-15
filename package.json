@@ -1,0 +1,20 @@
+{
+  "name": "@fidensa/check-certification",
+  "version": "0.1.0",
+  "description": "GitHub Action to check Fidensa certification status in CI/CD pipelines",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint --fix src/ test/",
+    "format": "prettier --write \"**/*.mjs\"",
+    "format:check": "prettier --check \"**/*.mjs\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fidensa/check-certification.git"
+  },
+  "keywords": ["fidensa", "certification", "mcp", "trust", "github-action"],
+  "author": "Fidensa",
+  "license": "MIT"
+}
