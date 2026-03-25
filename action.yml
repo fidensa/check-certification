@@ -47,5 +47,5 @@ outputs:
     description: 'JSON array of per-capability check results'
 
 runs:
-  using: 'node22'
+  using: 'node24'
   main: 'index.cjs'
