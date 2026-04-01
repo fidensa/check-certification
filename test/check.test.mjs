@@ -1,4 +1,4 @@
-import { describe, it, beforeEach } from 'node:test';
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   tierLevel,
@@ -248,7 +248,7 @@ describe('checkCapabilities', () => {
 
   it('deduplicates capability IDs', async () => {
     let callCount = 0;
-    const fetcher = async (url) => {
+    const fetcher = async (_url) => {
       callCount++;
       return { ok: true, status: 200, json: async () => makeAttestation() };
     };

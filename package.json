@@ -16,5 +16,11 @@
   },
   "keywords": ["fidensa", "certification", "mcp", "trust", "github-action"],
   "author": "Fidensa",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "prettier": "^3.3.0"
+  }
 }
